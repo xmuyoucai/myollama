@@ -1,0 +1,44 @@
+{
+  "statefulConfig": {
+    "serviceName": "my-service",
+    "description": "",
+    "role": "acs:ram::1139396200532432:role/aliyunfcdefaultrole",
+    "logConfig": {
+      "project": "",
+      "logstore": "",
+      "enableRequestMetrics": false,
+      "enableInstanceMetrics": false,
+      "logBeginRule": "None"
+    },
+    "serviceId": "6ce8fd9f-1acd-44a7-b4b9-8ffc96706c59",
+    "createdTime": "2024-05-29T09:32:32Z",
+    "lastModifiedTime": "2024-05-29T09:32:32Z",
+    "vpcConfig": {
+      "vpcId": "",
+      "vSwitchIds": [],
+      "securityGroupId": "",
+      "role": null,
+      "anytunnelViaENI": null
+    },
+    "internetAccess": true,
+    "nasConfig": {
+      "userId": -1,
+      "groupId": -1,
+      "mountPoints": []
+    },
+    "ossMountConfig": {
+      "mountPoints": []
+    },
+    "vendorConfig": null,
+    "tracingConfig": {
+      "type": null,
+      "params": null,
+      "jaegerConfig": null
+    },
+    "useSLRAuthentication": false,
+    "name": "my-service"
+  },
+  "statefulAutoConfig": {
+    "role": "acs:ram::1139396200532432:role/aliyunfcdefaultrole"
+  }
+}

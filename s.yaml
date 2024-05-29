@@ -1,0 +1,19 @@
+edition: 1.0.0
+name: my-ollama
+access: default
+
+services:
+  fc-deploy-test:
+    component: devsapp/fc
+    props:
+      region: cn-shenzhen
+      service:
+        name: my-service
+      function:
+        name: my-function
+        runtime: custom-container
+        handler: not-used
+        memorySize: 512
+        timeout: 300
+        customContainerConfig:
+          image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1

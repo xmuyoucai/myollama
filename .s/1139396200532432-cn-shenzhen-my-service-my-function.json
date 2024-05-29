@@ -1,0 +1,53 @@
+{
+  "statefulConfig": {
+    "functionId": "62fd784f-a05c-4dbd-ac76-7a6ca97867e3",
+    "functionName": "my-function",
+    "description": "This is default function description by fc-deploy component",
+    "runtime": "custom-container",
+    "handler": "not-used",
+    "timeout": 300,
+    "initializer": "",
+    "initializationTimeout": 3,
+    "codeSize": 0,
+    "codeChecksum": "",
+    "memorySize": 512,
+    "gpuMemorySize": null,
+    "environmentVariables": {},
+    "createdTime": "2024-05-29T09:32:32Z",
+    "lastModifiedTime": "2024-05-29T09:32:32Z",
+    "instanceConcurrency": 1,
+    "instanceSoftConcurrency": null,
+    "customContainerConfig": {
+      "accelerationInfo": {
+        "status": "Preparing"
+      },
+      "accelerationType": "Default",
+      "args": null,
+      "command": null,
+      "image": "registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1",
+      "imageAcclConfig": null,
+      "lastAvailableImageAcclConfigInternal": null,
+      "instanceID": null,
+      "serverlessImage": null,
+      "webServerMode": true
+    },
+    "caPort": 9000,
+    "instanceType": "e1",
+    "layers": null,
+    "layersArnV2": null,
+    "instanceLifecycleConfig": {
+      "preFreeze": {
+        "handler": "",
+        "timeout": 3
+      },
+      "preStop": {
+        "handler": "",
+        "timeout": 3
+      }
+    },
+    "customDNS": null,
+    "customRuntimeConfig": null,
+    "customHealthCheckConfig": null,
+    "name": "my-function"
+  }
+}

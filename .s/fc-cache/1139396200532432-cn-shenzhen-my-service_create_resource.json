@@ -1,0 +1,6 @@
+{
+  "serviceName": "my-service",
+  "functionNames": [
+    "my-service/my-function"
+  ]
+}
