@@ -21,7 +21,7 @@ services:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
           gpus: all
       triggers:
-        - name: http-trigger
+        - name: httpTrigger
           type: http
           config:
             authType: anonymous
