@@ -18,7 +18,7 @@ services:
         memorySize: 512
         timeout: 3600  # Timeout in seconds
         customContainerConfig:
-          image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
+          image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:2.1
           gpus: all
           port: 11434
       triggers:
