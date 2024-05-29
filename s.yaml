@@ -19,12 +19,21 @@ services:
         timeout: 60  # Timeout in seconds
         customContainerConfig:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
-          # 端口映射：容器内部端口到外部端口
           port: 11434
-      # 可以增加触发器配置以便于测试或接入其他服务
       triggers:
         - name: http-trigger
           type: http
           config:
             authType: anonymous
-            methods: ["GET", "POST"]
+            methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - HEAD
+              - OPTIONS
+      customDomains:
+        - domainName: auto
+          protocol: HTTP
+          routeConfigs:
+            - path: /*
