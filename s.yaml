@@ -41,7 +41,3 @@ services:
           customHealthCheck:
             path: /ping
             port: 11434
-      initializer:
-        cmds:
-          - echo "Running custom initialization script"
-          - ollama run llama3
