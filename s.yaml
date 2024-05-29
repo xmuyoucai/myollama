@@ -19,7 +19,7 @@ services:
         timeout: 300  # Timeout in seconds
         customContainerConfig:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
-          port: 11434
+          gpus: all
       triggers:
         - name: http-trigger
           type: http
