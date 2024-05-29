@@ -20,6 +20,7 @@ services:
         customContainerConfig:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
           gpus: all
+          port: 11434
       triggers:
         - name: httpTrigger
           type: http
