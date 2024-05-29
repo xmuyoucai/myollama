@@ -38,3 +38,6 @@ services:
           protocol: HTTP
           routeConfigs:
             - path: /*
+          customHealthCheck:
+            path: /ping   # 健康检查路径，可以根据您的实际情况修改
+            port: 11434   # 健康检查端口
