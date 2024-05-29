@@ -9,28 +9,22 @@ services:
       region: cn-shenzhen
       service:
         name: my-service
+        description: "My custom service running in a custom container"
       function:
         name: my-function
+        description: "Function that runs my custom container"
         runtime: custom-container
         handler: not-used
         memorySize: 512
-        timeout: 300
+        timeout: 60  # Timeout in seconds
         customContainerConfig:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
+          # 端口映射：容器内部端口到外部端口
+          port: 11434
+      # 可以增加触发器配置以便于测试或接入其他服务
       triggers:
-        - name: httpTrigger
+        - name: http-trigger
           type: http
           config:
             authType: anonymous
-            methods:
-              - GET
-              - POST
-              - PUT
-              - DELETE
-              - HEAD
-              - OPTIONS
-      customDomains:
-        - domainName: auto
-          protocol: HTTP
-          routeConfigs:
-            - path: /*
+            methods: ["GET", "POST"]
