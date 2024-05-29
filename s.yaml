@@ -21,6 +21,7 @@ services:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
           gpus: all
           port: 11434
+          startCommand: "ollama run llama3"
       triggers:
         - name: httpTrigger
           type: http
@@ -39,5 +40,5 @@ services:
           routeConfigs:
             - path: /*
           customHealthCheck:
-            path: /ping   # 健康检查路径，可以根据您的实际情况修改
-            port: 11434   # 健康检查端口
+            path: /ping
+            port: 11434
