@@ -16,7 +16,7 @@ services:
         runtime: custom-container
         handler: not-used
         memorySize: 512
-        timeout: 60  # Timeout in seconds
+        timeout: 300  # Timeout in seconds
         customContainerConfig:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
           port: 11434
