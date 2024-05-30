@@ -29,6 +29,7 @@ services:
         cpu: 4
         timeout: 120  # Timeout in seconds
         gpu: true
+        disk: 1024
         customContainerConfig:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
           gpus: all
