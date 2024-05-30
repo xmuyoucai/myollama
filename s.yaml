@@ -27,7 +27,8 @@ services:
         handler: not-used
         memorySize: 16384
         cpu: 4
-        timeout: 120  # Timeout in seconds
+        disk: 512
+        timeout: 120
         gpu: true
         environmentVariables:
             OLLAMA_MODELS: '/mnt/models'
