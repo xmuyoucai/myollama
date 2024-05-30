@@ -16,8 +16,6 @@ services:
             - vsw-wz9dfg9lvmiuqwpi3zqkz
           securityGroupId: sg-bp15n7h845tkwqz5kq5f
         nasConfig:
-          userId: 10003
-          groupId: 10003
           mountPoints:
             - serverAddr: ap-4ogxkae8oh.291f749633-qar75.cn-shenzhen.nas.aliyuncs.com
               mountDir: /mnt/oss
