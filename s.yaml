@@ -19,18 +19,18 @@ services:
         nasConfig:
           mountPoints:
             - serverAddr: 282cc4b780-iep22.cn-shenzhen.nas.aliyuncs.com
-              nasDir: /ollama
-              fcDir: /models
+              nasDir: /ollama/models
+              fcDir: /ollama/models
       function:
         name: 'fc2'
         description: 'Ollama Container Function'
         runtime: custom-container
         handler: not-used
-        memorySize: 16384
-        cpu: 4
         timeout: 3600
         gpu: true
         caPort: 11434
+        environmentVariables: # 环境变量
+          OLLAMA_MODELS: '/ollama/models'
         customContainerConfig:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
       triggers:
