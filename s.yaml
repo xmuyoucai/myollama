@@ -33,9 +33,6 @@ services:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
           gpus: all
           port: 11434
-          mountPoints:
-            - nasDir: /ollama
-              fcDir: /root/.ollama
       triggers:
         - name: httpTrigger
           type: http
