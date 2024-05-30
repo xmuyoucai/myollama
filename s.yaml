@@ -29,7 +29,6 @@ services:
         cpu: 4
         timeout: 120  # Timeout in seconds
         gpu: true
-        disk: 1024
         environmentVariables:
             OLLAMA_MODELS: '/mnt/models'
         customContainerConfig:
