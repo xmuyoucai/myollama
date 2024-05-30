@@ -17,7 +17,6 @@ services:
         handler: not-used
         memorySize: 16384
         cpu: 4
-        disk: 10240
         timeout: 3600
         gpu: true
         customContainerConfig:
@@ -41,6 +40,3 @@ services:
           protocol: HTTP
           routeConfigs:
             - path: /*
-          customHealthCheck:
-            path: /ping
-            port: 11434
