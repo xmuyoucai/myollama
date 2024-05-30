@@ -8,7 +8,7 @@ services:
     props:
       region: cn-shenzhen
       service:
-        name: svc-llm
+        name: svc2
         description: "LLM Service"
         vpcConfig:
           vpcId: vpc-wz9qzo60v7tckipg5e5r5
@@ -21,7 +21,7 @@ services:
               nasDir: /ollama
               fcDir: /models
       function:
-        name: fc-ollama
+        name: fc2
         description: "Ollama Container Function"
         runtime: custom-container
         handler: not-used
