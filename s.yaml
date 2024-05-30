@@ -1,6 +1,6 @@
 edition: 1.0.0
-name: ollama-app
-access: default
+name: llm
+access: 'undefined'
 
 services:
   fc-deploy-test:
@@ -30,8 +30,6 @@ services:
         disk: 10240
         timeout: 3600
         gpu: true
-        environmentVariables:
-          OLLAMA_MODELS: '/models'
         customContainerConfig:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
           gpus: all
