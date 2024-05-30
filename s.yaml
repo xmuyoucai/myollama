@@ -10,6 +10,12 @@ services:
       service:
         name: my-service
         description: "My custom service running in a custom container"
+        nasConfig:
+          userId: 10003
+          groupId: 10003
+          mountPoints:
+            - serverAddr: 291f749633-jbr91.cn-shenzhen.nas.aliyuncs.com
+              mountDir: /mnt/oss
       function:
         name: my-function
         description: "Function that runs my custom container"
@@ -21,6 +27,9 @@ services:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
           gpus: all
           port: 11434
+          mountPoints:
+            - nasDir: /mnt/oss/ollama
+              fcDir: /root/.ollama
       triggers:
         - name: httpTrigger
           type: http
