@@ -1,24 +1,37 @@
 edition: 1.0.0
-name: my-ollama
+name: ollama-app
 access: default
 
 services:
   fc-deploy-test:
-    component: devsapp/fc
+    component: fc
     props:
       region: cn-shenzhen
       service:
-        name: my-service
-        description: "My custom service running in a custom container"
+        name: svc2
+        description: "LLM Service"
+        vpcConfig:
+          vpcId: vpc-wz9qzo60v7tckipg5e5r5
+          vSwitchIds:
+            - vsw-wz9r7kl5szv842l6pj6jj
+          securityGroupId: sg-wz9ij4l6v30875qa4hjk
+        nasConfig:
+          mountPoints:
+            - serverAddr: 282cc4b780-iep22.cn-shenzhen.nas.aliyuncs.com
+              nasDir: /ollama
+              fcDir: /models
       function:
-        name: my-function
-        description: "Function that runs my custom container"
+        name: fc2
+        description: "Ollama Container Function"
         runtime: custom-container
         handler: not-used
         memorySize: 16384
         cpu: 4
-        timeout: 3600  # Timeout in seconds
+        disk: 10240
+        timeout: 120
         gpu: true
+        environmentVariables:
+          OLLAMA_MODELS: '/models'
         customContainerConfig:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
           gpus: all
