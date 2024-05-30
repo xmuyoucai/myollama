@@ -1,18 +1,18 @@
 edition: 1.0.0
-name: llm
+name: 'llm'
 access: 'undefined'
 
 services:
-  fc-deploy-test:
+  framework:
     component: fc
     props:
-      region: cn-shenzhen
+      region: 'cn-shenzhen'
       service:
-        name: svc2
-        description: "LLM Service"
+        name: 'svc2'
+        description: 'LLM Service'
       function:
-        name: fc2
-        description: "Ollama Container Function"
+        name: 'fc2'
+        description: 'Ollama Container Function'
         runtime: custom-container
         handler: not-used
         memorySize: 16384
