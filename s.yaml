@@ -19,7 +19,7 @@ services:
           userId: 10003
           groupId: 10003
           mountPoints:
-            - serverAddr: 291f749633-jbr91.cn-shenzhen.nas.aliyuncs.com
+            - serverAddr: ap-4ogxkae8oh.291f749633-qar75.cn-shenzhen.nas.aliyuncs.com
               mountDir: /mnt/oss
       function:
         name: my-function
