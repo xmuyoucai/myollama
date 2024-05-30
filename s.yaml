@@ -28,7 +28,7 @@ services:
         memorySize: 16384
         cpu: 4
         disk: 10240
-        timeout: 120
+        timeout: 3600
         gpu: true
         environmentVariables:
           OLLAMA_MODELS: '/models'
