@@ -33,12 +33,11 @@ services:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
           gpus: all
           port: 11434
-          command:
-            - sh
-            - -c
-            - |
-              ln -s /mnt/ollama /root/.ollama
-              exec ./bootstrap
+          command: |
+            sh -c "
+            ln -s /mnt/ollama /home/.ollama
+            ./bootstrap
+            "
       triggers:
         - name: httpTrigger
           type: http
