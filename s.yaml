@@ -16,9 +16,12 @@ services:
             - vsw-wz9r7kl5szv842l6pj6jj
           securityGroupId: sg-wz9ij4l6v30875qa4hjk
         nasConfig:
+          userId: 10003 # userID, 默认为10003
+          groupId: 10003 # groupID, 默认为10003
           mountPoints:
-            - serverAddr: ap-w2bue925gc.282cc4b780-jfb99.cn-shenzhen.nas.aliyuncs.com
-              mountDir: /mnt/auto
+            - serverAddr: 282cc4b780-iep22.cn-shenzhen.nas.aliyuncs.com
+              nasDir: /ollama
+              fcDir: /nas/ollama
       function:
         name: my-function
         description: "Function that runs my custom container"
@@ -33,7 +36,7 @@ services:
           gpus: all
           port: 11434
           mountPoints:
-            - nasDir: /mnt/auto/ollama
+            - nasDir: /ollama
               fcDir: /root/.ollama
       triggers:
         - name: httpTrigger
