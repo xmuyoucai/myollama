@@ -1,5 +1,5 @@
 edition: 1.0.0
-name: my-ollama
+name: ollama-app
 access: default
 
 services:
@@ -8,28 +8,26 @@ services:
     props:
       region: cn-shenzhen
       service:
-        name: my-service
-        description: "My custom service running in a custom container"
+        name: svc-llm
+        description: "LLM Service"
         vpcConfig:
           vpcId: vpc-wz9qzo60v7tckipg5e5r5
           vSwitchIds:
             - vsw-wz9r7kl5szv842l6pj6jj
           securityGroupId: sg-wz9ij4l6v30875qa4hjk
         nasConfig:
-          userId: 10003 # userID, 默认为10003
-          groupId: 10003 # groupID, 默认为10003
           mountPoints:
             - serverAddr: 282cc4b780-iep22.cn-shenzhen.nas.aliyuncs.com
               nasDir: /ollama
-              fcDir: /nas/ollama
+              fcDir: /root/.ollama
       function:
-        name: my-function
-        description: "Function that runs my custom container"
+        name: fc-ollama
+        description: "Ollama Container Function"
         runtime: custom-container
         handler: not-used
         memorySize: 16384
         cpu: 4
-        timeout: 3600  # Timeout in seconds
+        timeout: 120  # Timeout in seconds
         gpu: true
         customContainerConfig:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
