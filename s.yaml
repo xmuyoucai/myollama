@@ -19,7 +19,7 @@ services:
           mountPoints:
             - serverAddr: 282cc4b780-iep22.cn-shenzhen.nas.aliyuncs.com
               nasDir: /ollama
-              fcDir: /mnt/models
+              fcDir: /models
       function:
         name: fc-ollama
         description: "Ollama Container Function"
@@ -31,13 +31,11 @@ services:
         timeout: 120
         gpu: true
         environmentVariables:
-          OLLAMA_MODELS: '/mnt/models'
+          OLLAMA_MODELS: '/models'
         customContainerConfig:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
           gpus: all
           port: 11434
-          environmentVariables:
-            OLLAMA_MODELS: '/mnt/models'
       triggers:
         - name: httpTrigger
           type: http
