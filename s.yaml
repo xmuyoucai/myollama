@@ -10,29 +10,19 @@ services:
       service:
         name: my-service
         description: "My custom service running in a custom container"
-        vpcConfig:
-          vpcId: vpc-wz9qzo60v7tckipg5e5r5
-          vSwitchIds:
-            - vsw-wz9r7kl5szv842l6pj6jj
-          securityGroupId: sg-wz9ij4l6v30875qa4hjk
-        nasConfig:
-          mountPoints:
-            - serverAddr: ap-w2bue925gc.282cc4b780-jfb99.cn-shenzhen.nas.aliyuncs.com
-              mountDir: /mnt/auto
       function:
         name: my-function
         description: "Function that runs my custom container"
         runtime: custom-container
         handler: not-used
-        memorySize: 512
+        memorySize: 16384
+        cpu: 4
         timeout: 3600  # Timeout in seconds
+        gpu: true
         customContainerConfig:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
           gpus: all
           port: 11434
-          mountPoints:
-            - nasDir: /mnt/auto/ollama
-              fcDir: /root/.ollama
       triggers:
         - name: httpTrigger
           type: http
