@@ -10,15 +10,6 @@ services:
       service:
         name: my-service
         description: "My custom service running in a custom container"
-        vpcConfig:
-          vpcId: vpc-wz945q59vpzdkggvgbtgm
-          vSwitchIds:
-            - vsw-wz9dfg9lvmiuqwpi3zqkz
-          securityGroupId: sg-bp15n7h845tkwqz5kq5f
-        nasConfig:
-          mountPoints:
-            - serverAddr: ap-4ogxkae8oh.291f749633-qar75.cn-shenzhen.nas.aliyuncs.com
-              mountDir: /mnt/oss
       function:
         name: my-function
         description: "Function that runs my custom container"
@@ -31,7 +22,7 @@ services:
           gpus: all
           port: 11434
           mountPoints:
-            - nasDir: /mnt/oss/ollama
+            - nasDir: /mnt/auto/ollama
               fcDir: /root/.ollama
       triggers:
         - name: httpTrigger
