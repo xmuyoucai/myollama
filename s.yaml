@@ -19,7 +19,7 @@ services:
           mountPoints:
             - serverAddr: 282cc4b780-iep22.cn-shenzhen.nas.aliyuncs.com
               nasDir: /ollama
-              fcDir: /
+              fcDir: /mnt/ollama
       function:
         name: fc-ollama
         description: "Ollama Container Function"
@@ -33,6 +33,12 @@ services:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
           gpus: all
           port: 11434
+          command:
+            - sh
+            - -c
+            - |
+              ln -s /mnt/ollama /root/.ollama
+              exec ./bootstrap
       triggers:
         - name: httpTrigger
           type: http
