@@ -19,7 +19,7 @@ services:
           mountPoints:
             - serverAddr: 282cc4b780-iep22.cn-shenzhen.nas.aliyuncs.com
               nasDir: /ollama
-              fcDir: /home/.ollama
+              fcDir: /
       function:
         name: fc-ollama
         description: "Ollama Container Function"
