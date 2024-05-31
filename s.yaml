@@ -13,7 +13,7 @@ services:
         role: acs:ram::1139396200532432:role/aliyunfcdefaultrole
         vpcConfig:
           vpcId: vpc-wz9qzo60v7tckipg5e5r5
-          vSwitchIds:
+          vswitchIds:
             - vsw-wz9r7kl5szv842l6pj6jj
           securityGroupId: sg-wz9ij4l6v30875qa4hjk
         nasConfig:
@@ -26,7 +26,7 @@ services:
           enableInstanceMetrics: true
           logBeginRule: DefaultRegex
           project: aliyun-fc-cn-shenzhen-743394e2-c05b-5c67-a97a-6687e3e012cc
-          logStore: function-log
+          logstore: function-log
         customHealthCheckConfig:
           failureThreshold: 3
           httpGetUrl: /api/version
