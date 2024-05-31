@@ -41,10 +41,10 @@ services:
         timeout: 3600
         caPort: 11434
         cpu: 4
-        instanceType: fc.gpu.ampere.1
+        instanceType: g1
         memorySize: 16384
         gpu: 1
-        gpuMemorySize: 24576
+        gpuMemorySize: 16384
         diskSize: 512
         environmentVariables: # 环境变量
           OLLAMA_MODELS: '/ollama/models'
