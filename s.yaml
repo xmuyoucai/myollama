@@ -29,6 +29,9 @@ services:
         timeout: 3600
         gpu: true
         caPort: 11434
+        cpu: 4
+        memorySize: 16384
+        diskSize: 512
         environmentVariables: # 环境变量
           OLLAMA_MODELS: '/ollama/models'
         customContainerConfig:
