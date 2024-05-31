@@ -8,7 +8,7 @@ services:
     props:
       region: 'cn-shenzhen'
       service:
-        name: 'svc2'
+        name: 'llm'
         description: 'LLM Service'
         role: acs:ram::1139396200532432:role/aliyunfcdefaultrole
         vpcConfig:
@@ -34,7 +34,7 @@ services:
           timeoutSeconds: 1
           successThreshold: 1
       function:
-        name: 'fc2'
+        name: 'ollama'
         description: 'Ollama Container Function'
         runtime: custom-container
         handler: not-used
