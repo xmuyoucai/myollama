@@ -33,6 +33,13 @@ services:
           OLLAMA_MODELS: '/ollama/models'
         customContainerConfig:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
+        customHealthCheckConfig:
+          httpGetUrl: /api/version # 容器自定义健康检查 URL 地址
+          initialDelaySeconds: 30 # 容器启动到发起健康检查的延迟
+          periodSeconds: 3 # 健康检查周期
+          timeoutSeconds: 1 # 健康检查超时时间
+          failureThreshold: 3 # 健康检查失败次数阈值
+          successThreshold: 1 # 健康检查成功次数阈值
       triggers:
         - name: httpTrigger
           type: http
