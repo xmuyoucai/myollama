@@ -21,6 +21,18 @@ services:
             - serverAddr: 282cc4b780-iep22.cn-shenzhen.nas.aliyuncs.com
               nasDir: /ollama/models
               fcDir: /ollama/models
+        logConfig:
+          enableRequestMetrics: true
+          enableInstanceMetrics: true
+          logBeginRule: DefaultRegex
+          project: aliyun-fc-cn-shenzhen-743394e2-c05b-5c67-a97a-6687e3e012cc
+          logStore: function-log
+        customHealthCheckConfig:
+          failureThreshold: 3
+          httpGetUrl: /api/version
+          periodSeconds: 3
+          timeoutSeconds: 1
+          successThreshold: 1
       function:
         name: 'fc2'
         description: 'Ollama Container Function'
