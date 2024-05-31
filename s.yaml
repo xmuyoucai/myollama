@@ -19,8 +19,8 @@ services:
         nasConfig:
           mountPoints:
             - serverAddr: 282cc4b780-iep22.cn-shenzhen.nas.aliyuncs.com
-              nasDir: /ollama/models
-              fcDir: /ollama/models
+              nasDir: /ollama
+              fcDir: /ollama
         logConfig:
           enableRequestMetrics: true
           enableInstanceMetrics: true
@@ -47,7 +47,8 @@ services:
         gpuMemorySize: 16384
         diskSize: 512
         environmentVariables: # 环境变量
-          OLLAMA_MODELS: '/ollama/models'
+#          OLLAMA_MODELS: '/ollama/models'
+          OLLAMA_HOME: '/ollama'
         customContainerConfig:
           image: registry.cn-shenzhen.aliyuncs.com/llldh/ollama:1
         customHealthCheckConfig:
