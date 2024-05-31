@@ -42,6 +42,7 @@ services:
         gpu: true
         caPort: 11434
         cpu: 4
+        instanceType: e1
         memorySize: 16384
         diskSize: 512
         environmentVariables: # 环境变量
